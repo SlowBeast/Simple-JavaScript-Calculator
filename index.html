@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<style type="text/css">
+		
+		body {
+			background-color: black;
+			font-family: corbel;
+		}	
+
+		form {
+			width: 290px;
+			border: 5px solid white;
+			padding: 20px;
+			text-align: center;
+			background: linear-gradient(to right, black, grey);
+			margin: 0;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-right: -50%;
+		    transform: translate(-50%, -50%)
+		}
+
+		input[type="text"] {
+			height: 50px;
+			width: 95%;
+			margin-left: -5px;
+			font-size: 2em;
+			padding-left: 5px;
+		}
+
+		input[type="button"] {
+			width: 60px;
+			height: 45px;
+			background-color: white;
+			margin-right: 9px;
+			font-size: 1.5em;
+		}
+
+		input[type="button"]:active {
+			position: relative;
+			top: 3px;
+		}
+	</style>
+</head>
+<body>
+
+<form name="calcform">
+
+<h1 style="position: absolute; color: white; margin-top: -90px; text-align: center">JavaScript Calculator</h1>
+
+<input type="text" name="txt1" placeholder="0" id="display" maxlength="10" /> <br/ > <br />
+<input type="button" name="btn7" value="7" onclick="displayNumber(btn7.value)" />
+<input type="button" name="btn8" value="8" onclick="displayNumber(btn8.value)" />
+<input type="button" name="btn9" value="9" onclick="displayNumber(btn9.value)" />
+<input type="button" name="btnadd" value="+" onclick="displayNumber(btnadd.value)" /> <br/> <br/>
+<input type="button" name="btn4" value="4" onclick="displayNumber(btn4.value)" />
+<input type="button" name="btn5" value="5" onclick="displayNumber(btn5.value)" />
+<input type="button" name="btn6" value="6" onclick="displayNumber(btn6.value)" />
+<input type="button" name="btnsub" value="-" onclick="displayNumber(btnsub.value)" /> <br/> <br/>
+<input type="button" name="btn1" value="1" onclick="displayNumber(btn1.value)" />
+<input type="button" name="btn2" value="2" onclick="displayNumber(btn2.value)" />
+<input type="button" name="btn3" value="3" onclick="displayNumber(btn3.value)" />
+<input type="button" name="btnmul" value="*" onclick="displayNumber(btnmul.value)" /> <br/> <br/>
+<input type="button" name="btn0" value="0" onclick="displayNumber(btn0.value)" />
+<input type="button" name="btnrem" value="%" onclick="displayNumber(btnrem.value)" />
+<input type="button" name="btndot" value="." onclick="displayNumber(btndot.value)" />
+<input type="button" name="btndiv" value="/" onclick="displayNumber(btndiv.value)" /> <br/> <br/>
+<input type="button" name="btneq" value="=" onclick="calcform.txt1.value = eval(calcform.txt1.value)" />
+<input type="button" name="btnc" value="C" id="buttonClear" />
+<input type="button" name="btnback" value="&larr;" id="backButton" />
+<input type="button" name="squareroot" value="&#8730;" id="squareRoot" />
+
+</form>
+<script type="text/javascript">
+function displayNumber(n1) {
+	calcform.txt1.value = calcform.txt1.value + n1;
+}
+
+document.getElementById('buttonClear').onclick = function() {
+	calcform.txt1.value = '';
+}
+
+document.getElementById('backButton').onclick = function() {
+	calcform.txt1.value = calcform.txt1.value.substring(0, calcform.txt1.value.length- 1) ;
+}
+
+document.getElementById('squareRoot').onclick = function() {
+	calcform.txt1.value = Math.sqrt(calcform.txt1.value);
+}
+</script>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div></body>
+</html>
